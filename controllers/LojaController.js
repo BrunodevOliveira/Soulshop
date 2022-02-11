@@ -1,8 +1,19 @@
+const Loja = require("../models/Loja")
+
 class LojaController {
 
     static async paginaLojas(req, res){
-        res.render("loja")
-        // req.send("Olá, sou a rota de lojas!")
+        let query = {}
+        const {nomeLoja} = req.query
+
+        if(nomeLoja) {
+
+            query = {name: { $regex: `${nomeLoja}`, $options: "i" }}
+        }
+
+        const lojas = await Loja.find(query).lean()
+
+        res.render("loja", { lojas, nomeLoja })
     }
 
     static async paginaAddLoja(req, res) {
