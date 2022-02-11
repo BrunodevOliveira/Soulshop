@@ -28,6 +28,27 @@
             </thead>
             <tbody>
                 {{#each produtos}}
+                    <div class="modal" id="myModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Deseja mesmo deletar esta loja?{{this.name}}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                                    <form action="/produtos/deletar" method="POST">
+                                        <input type="hidden" name="id" value="{{this._id}}">
+                                        <button class="btn btn-danger delete mx-1" type="submit">
+                                            Deletar
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <tr>
                         <td>{{this.name}}</td>
                         <td>{{this.price}}</td>
@@ -41,13 +62,9 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <form action="/produtos/deletar" method="POST">
-                                        <input type="hidden" name="id" value="{{this._id}}">
-                                        <button class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                    </form>
-                                    
+                                    <button class="btn btn-sm btn-danger modal-delete">
+                                    <i class="bi bi-trash"></i>
+                                    </button> 
                                 </div>
                             </div>
                         </td>

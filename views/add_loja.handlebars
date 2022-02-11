@@ -1,77 +1,81 @@
-<h1>Adicionar lojas</h1>
+<h1>
+  Adicionar lojas
+</h1>
 <hr />
-<form action="/lojas/enviar" method="POST">
 
-  <div class="form-group">
-    <label for="name">Nome</label>
-    <input type="text" name="name" id="name" class="form-control" required />
-  </div>
-
-  <div class="form-group">
-    <label for="cnpj">CNPJ</label>
-    <input type="text" name="cnpj" id="cnpj" class="form-control" required />
-  </div>
-
-  <div class="form-group">
-    <label for="state">Estado</label>
-    {{!-- <input type="text" name="state" id="state" class="form-control" required /> --}}
-    <select name="state">
-      <option value="AC">Acre</option>
-      <option value="AL">Alagoas</option>
-      <option value="AP">Amapá</option>
-      <option value="AM">Amazonas</option>
-      <option value="BA">Bahia</option>
-      <option value="CE">Ceará</option>
-      <option value="DF">Distrito Federal</option>
-      <option value="ES">Espírito Santo</option>
-      <option value="GO">Goiás</option>
-      <option value="MA">Maranhão</option>
-      <option value="MT">Mato Grosso</option>
-      <option value="MS">Mato Grosso do Sul</option>
-      <option value="MG">Minas Gerais</option>
-      <option value="PA">Pará</option>
-      <option value="PB">Paraíba</option>
-      <option value="PR">Paraná</option>
-      <option value="PE">Pernambuco</option>
-      <option value="PI">Piauí</option>
-      <option value="RJ">Rio de Janeiro</option>
-      <option value="RN">Rio Grande do Norte</option>
-      <option value="RS">Rio Grande do Sul</option>
-      <option value="RO">Rondônia</option>
-      <option value="RR">Roraima</option>
-      <option value="SC">Santa Catarina</option>
-      <option value="SP">São Paulo</option>
-      <option value="SE">Sergipe</option>
-      <option value="TO">Tocantins</option>
-</select>
-
-  </div>
-
-  <div class="form-group">
-    <label for="address">Endereço</label>
-    <input type="text" name="address" id="address" class="form-control" required />
-  </div>
-
-  <div class="form-group">
-    <label for="operation">Horário de funcionamento</label>
-    <input type="time" id="appt" name="operationOpen" min="09:00" max="18:00" required>
-    <input type="time" id="appt" name="operationClose" min="09:00" max="18:00" required>
-  </div>
-
-  <div class="form-group">
-    <label for="reputation">Avaliação</label>
-    <input type="range" name="reputation" id="reputation">
-  </div>
-
-  <div class="form-group">
-    <label for="number">Telefone</label>
-    <input
-      type="text"
-      name="number"
-      id="number"
-      class="form-control"
-      required
-    />
-
-  <button class="btn btn-primary mt-2">Criar</button>
-</form>
+<div class="container">
+  <form action="/lojas/enviar" method="POST">
+  
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" name="name" id="name" class="form-control" required />
+    </div>
+  
+    <div class="form-group">
+      <label for="cnpj">CNPJ</label>
+      <input type="text" name="cnpj" id="cnpj" class="form-control" required />
+    </div>
+  
+    <div class="form-group">
+      <label for="state">Estado</label>
+      <select name="state">
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+  </select>
+  
+    </div>
+  
+    <div class="form-group">
+      <label for="address">Endereço</label>
+      <input type="text" name="address" id="address" class="form-control" required />
+    </div>
+  
+    <div class="form-group">
+      <label for="operation">Horário de funcionamento</label>
+      <input type="time" id="appt" name="operationOpen" min="09:00" max="18:00" required>
+      <input type="time" id="appt" name="operationClose" min="09:00" max="18:00" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="reputation">Avaliação</label>
+      <input type="range" name="reputation" id="reputation">
+    </div>
+  
+    <div class="form-group">
+      <label for="number">Telefone</label>
+      <input
+        type="text"
+        name="number"
+        id="number"
+        class="form-control"
+        required
+      />
+  
+    <button class="btn btn-primary mt-2">Criar</button>
+  </form>
+</div>
