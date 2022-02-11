@@ -7,8 +7,10 @@ const Loja = model (
         name: { type: String, required: true},
         cnpj: { type: Number, required: true},
         address: { type: String, required: true },
-        operation: { type: Date, required: true },
-        reputation: { type: Number, required: true }
+        operationOpen: { type: String, required: true },
+        operationClose: { type: String, required: true },
+        reputation: { type: Number, required: true },
+        number: { type: String, required: true },
     })
 )
 
