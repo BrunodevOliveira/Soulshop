@@ -1,9 +1,9 @@
-<h1>
-  Adicionar lojas
-</h1>
-<hr />
+<div class="container col-10 mt-3">
+  <h1>
+    Adicionar lojas
+  </h1>
+  <hr />
 
-<div class="container">
   <form action="/lojas/enviar" method="POST">
   
     <div class="form-group">
@@ -13,57 +13,58 @@
   
     <div class="form-group">
       <label for="cnpj">CNPJ</label>
-      <input type="text" name="cnpj" id="cnpj" class="form-control" required />
+      <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="XX.XXX.XXX/XXXX-XX" required />
+    </div>
+  
+    <div class="row">
+      <div class="form-group col-md-9 ">
+        <label for="address">Endereço</label>
+        <input type="text" name="address" id="address" class="form-control" required />
+      </div>
+      <div class="form-group  col-md-3">
+        <label for="state">Estado</label><br>
+        <select name="state">
+          <option selected="selected">Selecione</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+      </div>
     </div>
   
     <div class="form-group">
-      <label for="state">Estado</label>
-      <select name="state">
-        <option value="AC">Acre</option>
-        <option value="AL">Alagoas</option>
-        <option value="AP">Amapá</option>
-        <option value="AM">Amazonas</option>
-        <option value="BA">Bahia</option>
-        <option value="CE">Ceará</option>
-        <option value="DF">Distrito Federal</option>
-        <option value="ES">Espírito Santo</option>
-        <option value="GO">Goiás</option>
-        <option value="MA">Maranhão</option>
-        <option value="MT">Mato Grosso</option>
-        <option value="MS">Mato Grosso do Sul</option>
-        <option value="MG">Minas Gerais</option>
-        <option value="PA">Pará</option>
-        <option value="PB">Paraíba</option>
-        <option value="PR">Paraná</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PI">Piauí</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="RN">Rio Grande do Norte</option>
-        <option value="RS">Rio Grande do Sul</option>
-        <option value="RO">Rondônia</option>
-        <option value="RR">Roraima</option>
-        <option value="SC">Santa Catarina</option>
-        <option value="SP">São Paulo</option>
-        <option value="SE">Sergipe</option>
-        <option value="TO">Tocantins</option>
-  </select>
-  
+      <label for="operation">Horário de funcionamento: </label>
+      <input class="input-form" type="time" id="appt" name="operationOpen" min="09:00" max="18:00" required>
+      <input class="input-form" type="time" id="appt" name="operationClose" min="09:00" max="18:00" required>
     </div>
   
     <div class="form-group">
-      <label for="address">Endereço</label>
-      <input type="text" name="address" id="address" class="form-control" required />
-    </div>
-  
-    <div class="form-group">
-      <label for="operation">Horário de funcionamento</label>
-      <input type="time" id="appt" name="operationOpen" min="09:00" max="18:00" required>
-      <input type="time" id="appt" name="operationClose" min="09:00" max="18:00" required>
-    </div>
-  
-    <div class="form-group">
-      <label for="reputation">Avaliação</label>
-      <input type="range" name="reputation" id="reputation">
+      <label for="reputation">Avaliação: </label>
+      <input class="input-form" type="range" name="reputation" id="reputation">
     </div>
   
     <div class="form-group">
@@ -73,9 +74,18 @@
         name="number"
         id="number"
         class="form-control"
+        placeholder="(XX) XXXX-XXXX"
         required
       />
-  
-    <button class="btn btn-primary mt-2">Criar</button>
+
+    <div class="d-flex justify-content-around">
+      <div>
+        <button class="btn btn-success mt-4"><strong>Criar Loja</strong></button>
+      </div>
+      <div>
+        <a href="/lojas" class="btn btn-secondary mt-4">Voltar</a>
+      </div>
+    </div>
+
   </form>
 </div>
