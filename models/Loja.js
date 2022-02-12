@@ -5,7 +5,7 @@ const Loja = model (
     new Schema({
         state: { type: String, required: true},
         name: { type: String, required: true},
-        cnpj: { type: Number, required: true},
+        cnpj: { type: String, required: true},
         address: { type: String, required: true },
         operationOpen: { type: String, required: true },
         operationClose: { type: String, required: true },
