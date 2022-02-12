@@ -1,38 +1,21 @@
-console.log('Foi!!')
-let teste
 switch (window.location.pathname) {
-    case "/produtos":
-        var array = [];
+  case "/produtos":
+  case "/lojas":
+    modal();
+    break;
+}
 
-        Array.from(document.getElementsByClassName("modal")).forEach((modal) => {
-            array.push(new bootstrap.Modal(modal));
-        });
-        console.log("produtos")
-        teste = document.getElementsByClassName("modal-delete");
-        console.log(Array.from(teste));
-        Array.from(teste).forEach((btn, i) => {
-            btn.onclick = function () {
-                console.log(i);
-                array[i].show();
-            };
-        });  
-        break;
-    
-    
-    case "/lojas":
-        var array = [];
+function modal() {
+  const modalArray = [];
 
-        Array.from(document.getElementsByClassName("modal")).forEach((modal) => {
-            array.push(new bootstrap.Modal(modal));
-        });
-        console.log("Lojas")
-        teste = document.getElementsByClassName("modal-delete");
-        console.log(Array.from(teste));
-        Array.from(teste).forEach((btn, i) => {
-            btn.onclick = function () {
-                console.log(i);
-                array[i].show();
-            };
-        });
-        break;
+  Array.from(document.getElementsByClassName("modal")).forEach((modal) => {
+    modalArray.push(new bootstrap.Modal(modal));
+  });
+
+  const deleteButtons = document.getElementsByClassName("modal-delete");
+  Array.from(deleteButtons).forEach((btn, i) => {
+    btn.onclick = function () {
+      modalArray[i].show();
+    };
+  });
 }
