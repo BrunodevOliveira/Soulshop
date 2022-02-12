@@ -1,6 +1,7 @@
 switch (window.location.pathname) {
   case "/produtos":
   case "/lojas":
+  case "/cupons":
     modal();
     break;
 }

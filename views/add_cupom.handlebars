@@ -1,0 +1,18 @@
+<div class="container col-10 mt-3">
+    <h2>Adicionar cupon</h2>
+    <hr />
+    <form action="/cupom/adicionar" method="POST">
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="name" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label for="value">Valor</label>
+            <input type="number" name="value" id="value" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label for="expiration">Validade</label>
+            <input type="text" name="expiration" id="expiration" class="form-control" required></input>
+            <button class="btn btn-success mt-2">Adicionar</button>
+    </form>
+</div>
