@@ -14,4 +14,12 @@ router.post("/produtos/enviar", ProdutoController.addProduto)
 
 router.post("/produtos/deletar", ProdutoController.deleteProduto)
 
+router.get("/produtos/:id", ProdutoController.paginaProduto)
+
+router.post("/produtos/add_avaliacao", ProdutoController.addAvaliacao)
+
+router.post("/produtos/delete_avaliacao", ProdutoController.produtoCommentDelete)
+
+router.post("/produtos/update_avaliacao", ProdutoController.produtoCommentEdit)
+
 module.exports = router

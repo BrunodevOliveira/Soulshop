@@ -6,6 +6,11 @@ switch (window.location.pathname) {
     break;
 }
 
+// if(window.location.pathname.includes("/produtos/")) {
+//   modal()
+// }
+
+// console.log(window.location.pathname)
 function modal() {
   const modalArray = [];
 

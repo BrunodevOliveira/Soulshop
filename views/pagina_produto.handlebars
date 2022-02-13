@@ -1,0 +1,99 @@
+<a href="/produtos" class="btn btn-dark m-1">Voltar</a>
+
+<div class="container">
+    <div class="card shadow mt-4">
+        <div class="d-flex justify-content-center">
+            <img src="/img/logo.png" height="150" width="300" alt="Logo Soulshop">
+        </div>
+        <div class="card-body bg-secondary">
+            <h5 class="card-title text-center text-white">{{produto.name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">R$ {{produto.price}}</li>
+            <li class="list-group-item">{{produto.description}}</li>
+            <li class="list-group-item">{{produto.quantity}} unidades em estoque</li>
+            <li class="list-group-item">Categoria: {{produto.category}}</li>
+        </ul>
+        <div class="card-body">
+            <div class="d-flex flex-column">
+                {{#each produto.avaliation as | avaliation|}}
+                <div class="container-fluid border border-1 border-dark my-1">
+                    <div>
+                        <i class="bi bi-person-circle"></i>
+                        <span>Usuário anônimo</span>
+                    </div>
+                    <hr>
+                    <p>{{avaliation.av}}</p>
+                    <p>Nota: {{avaliation.grade}}<i class="bi bi-star"></i></p>
+                    <div class="d-flex">
+                        <div>
+                            <form action="/produtos/delete_avaliacao" method="POST">
+                                <input type="hidden" name="comment_id" value="{{avaliation._id}}">
+                                <input type="hidden" name="id" id="id" value="{{../produto._id}}">
+                                <button class="btn btn-sm btn-danger modal-delete m-1">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container-fluid border border-warning border-1 my-1">
+                        <form action="/produtos/update_avaliacao" method="POST">
+                            <input type="hidden" name="comment_id" value="{{@index}}">
+                            <input type="hidden" name="id" value="{{../produto._id}}">
+                            <div class="form-group">
+                                <label for="editAvaliationAv">Editar comentário</label>
+                                <input type="text" name="editAvaliationAv" id="editAvaliationAv" class="form-control"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editAvaliationGrade">Nota</label>
+                                <select class="form-select" name="editAvaliationGrade" id="editAvaliationGrade"
+                                    required>
+                                    <option value="" disabled selected>Avalie o nosso produto</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary mt-2">Editar avaliação</button>
+                        </form>
+                    </div>
+                </div>
+
+                {{/each}}
+            </div>
+            <h2>Deixe uma avaliação</h2>
+            <form action="/produtos/add_avaliacao" method="POST">
+                <input type="hidden" name="id" value="{{produto._id}}">
+                <div class="form-group">
+                    <label for="avaliationAv">Sua avaliação</label>
+                    <input type="text" name="avaliationAv" id="avaliationAv" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="avaliationGrade">Nota</label>
+                    <select class="form-select" name="avaliationGrade" id="avaliationGrade" required>
+                        <option value="" disabled selected>Avalie o nosso produto</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary mt-2">Adicionar avaliação</button>
+            </form>
+        </div>
+    </div>
+</div>
