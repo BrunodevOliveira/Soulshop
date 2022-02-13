@@ -6,13 +6,8 @@
     <hr />
 
     <form method="GET">
-        <input 
-            type="text" 
-            name="nomeProduto"  
-            placeholder="Nome do Produto" 
-            class="form-control form-control-sm"
-            value="{{nomeProduto}}"
-        >
+        <input type="text" name="nomeProduto" placeholder="Nome do Produto" class="form-control form-control-sm"
+            value="{{nomeProduto}}">
 
         <button class="btn btn-sm btn-dark mt-1"><i class="bi bi-search"></i> Buscar</button>
     </form>
@@ -24,51 +19,57 @@
                 <th>Preço</th>
                 <th>Descrição</th>
                 <th>Quantidade</th>
+                <th>Categoria</th>
                 <th>Ações</th>
             </thead>
             <tbody>
                 {{#each produtos}}
-                    <div class="modal" id="myModal" tabindex="-1">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Deseja mesmo deletar esta loja?{{this.name}}</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
-                                    <form action="/produtos/deletar" method="POST">
-                                        <input type="hidden" name="id" value="{{this._id}}">
-                                        <button class="btn btn-danger delete mx-1" type="submit">
-                                            Deletar
-                                        </button>
-                                    </form>
-                                </div>
+                <div class="modal" id="myModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Deseja mesmo deletar esta loja?{{this.name}}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                                <form action="/produtos/deletar" method="POST">
+                                    <input type="hidden" name="id" value="{{this._id}}">
+                                    <button class="btn btn-danger delete mx-1" type="submit">
+                                        Deletar
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
-
-                    <tr>
-                        <td>{{this.name}}</td>
-                        <td>{{this.price}}</td>
-                        <td>{{this.description}}</td>
-                        <td>{{this.quantity}}</td>
-                        <td>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="/produtos/editar/{{this._id}}" class="btn btn-sm btn-warning mb-1">
-                                        <i class="bi bi-pencil"></i>
-                                    </a>
-                                </div>
-                                <div>
-                                    <button class="btn btn-sm btn-danger modal-delete">
-                                    <i class="bi bi-trash"></i>
-                                    </button> 
-                                </div>
+                </div>
+                <tr>
+                    <td> {{this.name}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.category}}</td>
+                    <td>
+                        <div class="d-flex">
+                            <div>
+                                <a href="/produtos/editar/{{this._id}}" class="btn btn-sm btn-warning mx-1">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
                             </div>
-                        </td>
-                    </tr>
+                            <div>
+                                <button class="btn btn-sm btn-danger modal-delete mx-1">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <a href="/produtos/{{this._id}}" class="btn btn-sm btn-info ms-1">
+                                    <i class="bi bi-box-arrow-in-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
                 {{/each}}
             </tbody>
         </table>
