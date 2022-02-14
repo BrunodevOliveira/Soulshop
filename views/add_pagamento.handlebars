@@ -1,0 +1,124 @@
+<div class="container col-10 mt-3">
+    <h1>
+        Adicionar Meio de Pagamento
+    </h1>
+    <hr />
+
+    <form action="/pagamentos/enviar" method="POST">
+
+        <div class="form-group">
+
+
+            <div class="form-group col-md-3">
+                <label for="operation">Operação</label><br>
+
+                <select name="operation" value="{{pagamento.operation}}">
+                    <option selected="selected">{{pagamento.operation}}</option>
+                    <option value="Crédito">Crédito</option>
+                    <option value="Débito">Débito</option>
+                    <option value="Boleto">Boleto</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="number">Número do Cartão</label>
+            <input type="text" name="number" id="number" class="form-control" value="{{pagamento.number}}" />
+        </div>
+        <div class="row">
+            <div class="form-group col-md-9">
+                <label for="address">Nome no cartão</label>
+                <input type="text" name="name" id="name" class="form-control" value="{{pagamento.name}}" required />
+            </div>
+            <div class="form-group col-md-3">
+                <label for="expMonth">Expiração</label><br>
+                <select name="expMonth" value="{{pagamento.expMonth}}">
+                    <option selected="selected">{{pagamento.expMonth}}</option>
+                    <option value="01">Janeiro</option>
+                    <option value="02">Fevereiro</option>
+                    <option value="03">Março</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Maio</option>
+                    <option value="06">Junho</option>
+                    <option value="07">Julho</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+                {{!-- <label for="state">:</label><br> --}}
+                <select name="expYear" value="{{pagamento.expYear}}">
+                    <option selected="selected">{{pagamento.expYear}}</option>
+                    <option value="22">2022</option>
+                    <option value="23">2023</option>
+                    <option value="24">2024</option>
+                    <option value="25">2025</option>
+                    <option value="26">2026</option>
+                    <option value="27">2027</option>
+                    <option value="28">2028</option>
+                    <option value="29">2029</option>
+                    <option value="30">2030</option>
+                    <option value="31">2031</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="operation">CVV</label>
+            <input type="text" name="cvv" id="cvv" class="form-control" value="{{pagamento.cvv}}" />
+        </div>
+        <div class="form-group">
+            <label for="reputation">CPF </label>
+            <input class="form-control" type="text" name="cpf" id="cpf" value="{{pagamento.cpf}}">
+        </div>
+        <div class="row">
+            <div class="form-group col-md-9">
+                <label for="address">Endereço/Endereço de Cobrança</label>
+                <input type="text" name="address" id="address" class="form-control" value="{{pagamento.address}}"
+                    required />
+            </div>
+            <div class="form-group col-md-3">
+                <label for="state">Estado</label><br>
+                <select name="state" value="{{pagamento.state}}">
+                    <option selected="selected">{{pagamento.state}}</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-around">
+            <div>
+                <button class="btn btn-success mt-4"><strong>Criar Meio de Pagamento</strong></button>
+            </div>
+            <div>
+                <a href="/pagamentos" class="btn btn-secondary mt-4">Voltar</a>
+            </div>
+        </div>
+
+    </form>
+</div>
